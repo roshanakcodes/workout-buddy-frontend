@@ -7,20 +7,11 @@ import Home from './pages/Home'
 import Navbar from './components/navbar'
 
 function App() {
-  const [showBanner, setShowBanner] = useState(true);
+  
   return (
     <div className="App">
 
-        {showBanner && (
-        <div className="dev-banner">
-          <AlertCircle size={20} strokeWidth={2.5} />
-          <p><span>Dev Sandbox:</span> This is a live global database! Feel free to test the API.</p>
-          <button className="close-banner-btn" onClick={() => setShowBanner(false)}>
-            <X size={18} strokeWidth={3} />
-          </button>
-        </div>
-        )}
-
+        
 
         <BrowserRouter>
           <Navbar />
@@ -28,8 +19,7 @@ function App() {
              <Routes>
                <Route path="/" element={<Home />} />
              </Routes>
-            <Footer>
-            </Footer>
+            
           </div>
         </BrowserRouter>
     </div>
@@ -39,23 +29,7 @@ function App() {
 
 // footer componet code
 
-const Footer = () => {
-  return (
-    <footer className="footer-container">
-      <div className="footer-content">
-        <div className="footer-item">
-          <Code size={20} color="var(--danger)" strokeWidth={3} />
-          <span>Coded by Roshan Akthar <span style={{color: 'var(--dark)', fontWeight: 900}}>  </span></span>
-        </div>
-        <div className="footer-divider"></div>
-        <div className="footer-item">
-          <Bot size={20} color="var(--secondary)" strokeWidth={3} />
-          <span>UI styled by me, Gemini implemented </span>
-        </div>
-      </div>
-    </footer>
-  );
-};
+
 
 
 
