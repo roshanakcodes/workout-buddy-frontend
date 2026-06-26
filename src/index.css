@@ -131,7 +131,12 @@ header h1 {
   border: 4px solid var(--dark);
   border-radius: 20px;
   box-shadow: 6px 6px 0 var(--dark);
+  padding: 25px; /* Adds space inside the card */
+  position: relative; /* Anchors the absolute delete button */
   display: flex;
+  flex-direction: column; /* Stacks text vertically */
+  align-items: flex-start; /* Stops boxes from stretching full width */
+  gap: 12px; /* Space between rows */
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   animation: popIn 0.5s ease forwards;
@@ -147,44 +152,16 @@ header h1 {
   box-shadow: 8px 8px 0 var(--dark);
   transform: translate(-2px, -2px);
 }
-.workout-details .accent-bar {
-  width: 24px;
-  background: var(--secondary);
-  border-right: 4px solid var(--dark);
-  transition: background 0.3s;
-  flex-shrink: 0;
-}
-.workout-details:hover .accent-bar {
-  background: var(--primary);
-}
-.workout-details .content {
-  padding: 25px;
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  min-width: 0;
-}
-.workout-details .info {
-  flex: 1;
-  min-width: 0; 
-  display: flex;
-  flex-direction: column;
-}
 .workout-details h4 {
   font-size: 1.8rem;
   font-weight: 900;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   color: var(--dark);
   line-height: 1.1;
-  word-break: break-word; /* Allows super long titles to wrap gracefully */
-}
-.workout-details .stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  word-break: break-word;
+  padding-right: 60px; /* Prevents text colliding with trash icon */
+  width: 100%;
 }
 .workout-details p {
   display: inline-flex;
@@ -197,10 +174,15 @@ header h1 {
   font-weight: bold;
   font-size: 0.9rem;
   box-shadow: 2px 2px 0 var(--dark);
+  margin: 0;
 }
-.workout-details .date {
-  display: block;
-  margin-top: 15px;
+/* Style the date text nicely so it doesn't look like a box */
+.workout-details p:last-of-type {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin-top: 5px;
   font-size: 0.8rem;
   color: #64748b;
   font-weight: bold;
@@ -208,10 +190,15 @@ header h1 {
   letter-spacing: 1px;
 }
 .workout-details span.material-symbols-outlined {
+  position: absolute;
+  top: 25px;
+  right: 25px;
   background: var(--bg);
   border: 4px solid var(--dark);
   border-radius: 16px;
-  padding: 15px;
+  padding: 0;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   box-shadow: 4px 4px 0 var(--dark);
   transition: all 0.2s;
@@ -219,9 +206,7 @@ header h1 {
   align-items: center;
   justify-content: center;
   color: var(--dark);
-  flex-shrink: 0; /* Prevents it from getting crushed! */
   font-weight: 900;
-  min-width: 54px; /* Keeps the square shape consistent */
   font-size: 1.5rem;
 }
 .workout-details span.material-symbols-outlined:hover {

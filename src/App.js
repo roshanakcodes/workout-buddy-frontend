@@ -51,7 +51,7 @@ const Footer = () => {
         <div className="footer-divider"></div>
         <div className="footer-item">
           <Bot size={20} color="var(--secondary)" strokeWidth={3} />
-          <span>UI/UX assisted by <span style={{color: 'var(--dark)', fontWeight: 900, textTransform: 'uppercase'}}>AI</span></span>
+          <span>UI/ assisted by <span style={{color: 'var(--dark)', fontWeight: 900, textTransform: 'uppercase'}}>Gemini</span></span>
         </div>
       </div>
     </footer>
